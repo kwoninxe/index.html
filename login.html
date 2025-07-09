@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="common.css" />
+    <script
+      src="https://accounts.google.com/gsi/client"
+      referrerpolicy="strict-origin-when-cross-origin"
+      async
+      defer
+    ></script>
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <aside class="container">예시 화면</aside>
+      <section class="image-box">
+        <img src="poco.png" alt="포코" width="60%" />
+        <div class="text-box">
+          AI 학습코치 <b>포코</b>가<br />
+          당신의 집중 상태를 분석해요!
+        </div>
+
+        <div
+          id="g_id_onload"
+          data-client_id="906903443579-3g3sibq532i7b63houskeuumfc2v4a4k.apps.googleusercontent.com"
+          data-login_uri="https://focuscoach.click/api/oauth/google"
+          data-ux_mode="redirect"
+          data-context="signin"
+          data-auto_prompt="false"
+        ></div>
+
+        <div
+          class="g_id_signin google"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="continue_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+          data-width="280"
+        ></div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      계정 생성 시 개인정보 처리방침 및<br />
+      이용약관(마케팅 정보 수신동의 포함)에 동의하게 됩니다.
+    </footer>
+  </body>
+</html>
