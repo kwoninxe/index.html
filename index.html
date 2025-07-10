@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
     <link rel="stylesheet" href="common.css" />
-    <script
-      src="https://accounts.google.com/gsi/client"
-      referrerpolicy="strict-origin-when-cross-origin"
-      async
-      defer
-    ></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="icon" href="data:," />
   </head>
 
@@ -51,38 +46,7 @@
       계정 생성 시 개인정보 처리방침 및<br />
       이용약관(마케팅 정보 수신동의 포함)에 동의하게 됩니다.
     </footer>
+
+    <script src="main.js"></script>
   </body>
-
-  <script>
-    window.onload = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const code = urlParams.get("code");
-
-      if (code) {
-        console.log("✅ 인가코드 감지:", code);
-
-        fetch("https://focuscoach.click/api/oauth/google", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ code }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log("🎉 로그인 성공:", data);
-
-            // ✅ URL에서 쿼리스트링 제거
-            window.history.replaceState({}, document.title, "/index.html");
-
-            // ✅ 필요한 페이지로 리디렉션
-            // window.location.href = "/dashboard.html";
-          })
-          .catch((err) => {
-            console.error("❌ 로그인 실패:", err);
-            window.history.replaceState({}, document.title, "/index.html");
-          });
-      }
-    };
-  </script>
 </html>
